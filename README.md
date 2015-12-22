@@ -1,5 +1,10 @@
 # .tableFilter
 Using this JavaScript extension, you can add filter functionality to your given HTML tables
+![Filter Usage](http://lon.gr/blog/wp-content/uploads/2015/12/img2.png)
+
+Added filters are implemented automatically and refresh the table rows.
+
+![Example-Table](http://lon.gr/blog/wp-content/uploads/2015/12/img1.png)
 
 *Please keep in mind, that this project is still under construction. It works, but there SHOULD and WILL be improvements in performance, usability and design. Feel free to contribute!*
 
