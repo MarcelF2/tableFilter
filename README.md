@@ -9,7 +9,7 @@ Using this JavaScript extension, you can add filter functionality to your given 
 <script src="tableFilter.js"></script>
 <link rel="stylesheet" href="style.css">
 ```
-Dont forget to adjust the path to the files.
+Dont forget to adjust the path to the files and also include jQuery.
 
 ### 2. Give your table an ID and add the filterTable class
 ```
