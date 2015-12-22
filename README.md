@@ -1,2 +1,2 @@
 # tableFilter
-Filter given HTML tables by adding this framework
+Using this JavaScript extension, you can add filter functionality to your given HTML tables
