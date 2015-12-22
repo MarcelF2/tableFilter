@@ -4,19 +4,19 @@ Using this JavaScript extension, you can add filter functionality to your given 
 *Please keep in mind, that this project is still under construction. It works, but there SHOULD and WILL be improvements in performance, usability and design. Feel free to contribute!*
 
 ## Usage
-### 1. Insert the tableFilter.js and the style.css to your HTML file:
+### 1. Insert the tableFilter.js and the style.css to your HTML file
 ```
 <script src="tableFilter.js"></script>
 <link rel="stylesheet" href="style.css">
 ```
 Dont forget to adjust the path to the files.
 
-### 2. Give your table an ID and add the filterTable class:
+### 2. Give your table an ID and add the filterTable class
 ```
 <table id="table1" class="filterTable">
 ```
 
-### 3. Add a div for displaying the filter icons to your page:
+### 3. Add a div for displaying the filter icons to your page
 ```
 <div id="table1_filter"></div>
 ```
