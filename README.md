@@ -10,6 +10,7 @@ By adding the .tableFilter script to your HTML files, the following dialogue for
 
 *Please keep in mind, that this project is still under construction. It works, but there SHOULD and WILL be improvements in performance, usability and design. Feel free to contribute!*
 
+
 ## Usage
 ### 1. Insert the tableFilter.js and the style.css to your HTML file
 ```
