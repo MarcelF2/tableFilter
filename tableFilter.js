@@ -247,8 +247,11 @@ $( document ).ready(function() {
 		// Get index of row title
 		columnIndex = getColumnIndexByTitle(filter.attribut, table);
 						
+		var rowLength;
+		
 		// iterate rows
 		table.tableRows.forEach(function(row){
+			rowLength = row.length;				// Get Amount of Columns of the row for adding alert Row
 			// Depending on the operator- different actions are performed
 			switch (filter.operator){
 				case "eq":
@@ -330,7 +333,7 @@ $( document ).ready(function() {
 		
 		// Delete the Table Rows and add the resultingTableRows (Except the thead area)
 		$("#"+table.tableId+" tbody tr").remove();	
-			
+		
 		// Find out, which rows are filtered and add them to the dontShowRows Array			
 		var dontShowRows = []
 		table.tableRows.forEach(function(row){
@@ -343,7 +346,24 @@ $( document ).ready(function() {
 			
 		var htmlTableBody = document.getElementById(table.tableId).getElementsByTagName('tbody')[0];
 		// Push new Rows into the tableBody
+
+		// Insert Alert Row!
+		var newRow = htmlTableBody.insertRow(0);		//Create new Alert Row
+		var newCell = newRow.insertCell(0);				// Create new Cell in Row
+		newRow.cells[0].innerHTML= "cell 1";
+		newRow.cells[0].colSpan = rowLength;
+		newRow.cells[0].style.background = "#dd0a2b";
+		newRow.cells[0].style.textAlign = "center";
+		newRow.cells[0].style.color = "white";
+		newRow.cells[0].style.fontWeight = "bold";
+		newRow.cells[0].style.fontSize = "12px";
+		if (dontShowRows.length > 1){
+			newCell.innerHTML = dontShowRows.length + " rows are filtered";
+		}else{
+			newCell.innerHTML = "1 row is filtered";
 			
+		}
+	
 		table.tableRows.forEach(function (row) {				
 			// Determine which row will be shown
 			if ($.inArray( row[row.length-1], dontShowRows) == -1){
