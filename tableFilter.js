@@ -97,7 +97,7 @@ $( document ).ready(function() {
 	
 	// Now lets prepare the Filter Div
 	tables.forEach(function(table) {
-		var newFilterSpan = document.createElement('span');
+		var newFilterSpan = document.createElement('div');
 		newFilterSpan.id = table.tableId + '_' + amountOfAddFilter;
 		newFilterSpan.className = 'filterDiv addNewFilter filterIcon';
 		newFilterSpan.setAttribute('data-tableId', table.tableId);
@@ -190,16 +190,18 @@ $( document ).ready(function() {
 					divContent = divContent + '<option value="'+ head +'">'+ head +'</option>';
 				});
 		
-				// Vergleichsoperatoren
+				// Comparison Operators
 				divContent = divContent + '</select>\
 					<select id="select_opr_'+ table.tableId  +'">\
-					<option value="eq">\=</option>\
-					<option value="ne">\!\=</option>\
-					<option value="gT">\></option>\
-					<option value="lT">\<</option>\
+					<option value="eq">equal to</option>\
+					<option value="ne">not equal to</option>\
+					<option value="gT">greater than</option>\
+					<option value="lT">less than</option>\
+					<option value="ct">contains</option>\
+					<option value="ctN">contains not</option>\
 					</select>\
 					<input type="text" name="textInput_'+ table.tableId  +'" id="textInput_'+ table.tableId  +'">\
-					<button type="button" class="addFilterButton" id="'+divId+'_addFilter" data-tableId="'+table.tableId+'">Add Filter</button>\
+					<span class="addFilterButton" id="'+divId+'_addFilter" data-tableId="'+table.tableId+'">Add Filter</span>\
 					</div>';
 				
 				document.body.innerHTML += divContent;
@@ -300,12 +302,32 @@ $( document ).ready(function() {
 						}					
 					}
 					break;
+
+				case "ct":
+					operatorSymbol= "contains";
+					if(String(row[columnIndex]) != 'undefined'){								// Error prevention				
+						if(String(row[columnIndex]).search(String(filter.textInput))<0){		// Value found in Row
+							table.rowsFilter.push([filter.filterId, row[row.length-1]]);
+						}
+					}
+					break;
+					
+				case "ctN":
+					operatorSymbol= "contains not";
+					if(String(row[columnIndex]) != 'undefined'){								// Error prevention				
+						if(String(row[columnIndex]).search(String(filter.textInput))>=0){		// Value found in Row
+							table.rowsFilter.push([filter.filterId, row[row.length-1]]);
+						}
+					}
+					break;
+
 					
 				default:
 					operatorSymbol = "";
-			}
+			}		
 		});
-			
+
+		
 		// Delete the Table Rows and add the resultingTableRows (Except the thead area)
 		$("#"+table.tableId+" tbody tr").remove();	
 			
