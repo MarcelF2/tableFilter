@@ -1,9 +1,10 @@
+#JavaScript_table_filter
 # .tableFilter
 Using this JavaScript extension, you can add filter functionality to your given HTML tables.
 
 ![Example-Table](http://lon.gr/blog/wp-content/uploads/2015/12/Img1-e1450903372132.png)
 
-Configured filters are automatically assigned to the table and refresh the tables rows.
+Configured filters are automatically assigned to the table and refresh the table's rows.
 By adding the .tableFilter script to your HTML files, the following dialogue for defining filter operations is implemented:
 
 ![Filter Usage](http://lon.gr/blog/wp-content/uploads/2015/12/Img2.png)
@@ -17,7 +18,7 @@ By adding the .tableFilter script to your HTML files, the following dialogue for
 <script src="tableFilter.js"></script>
 <link rel="stylesheet" href="style.css">
 ```
-Dont forget to adjust the path to the files and also include jQuery.
+Don't forget to adjust the path to the files and also include jQuery.
 
 ### 2. Give your table an ID and add the filterTable class
 ```
@@ -30,16 +31,16 @@ Dont forget to adjust the path to the files and also include jQuery.
 ```
 Please note, that this div must get an ID in the following scheme: tableID_filter
 
-**Thats it!**
+**That's it!**
 
 
 ## Requirements
 
 ### jQuery
-Download jQuery and implement it above the reference to the tableFilter.js file in your sourcecode.
+Download jQuery and implement it above the reference to the tableFilter.js file in your source code.
 
 ### HTML5 Table
-For making this script work, you will have to provide a HTML table. The script requires a table, that contains a declared <thead> and <tbody> area that separates the table headers of the table content.
+For making this script work, you will have to provide an HTML table. The script requires a table, that contains a declared <thead> and <tbody> area that separates the table headers of the table content.
 Example:
 ```
 <table id="table1" class="filterTable">
